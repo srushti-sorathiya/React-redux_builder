@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { GET_PRODUCT_PROGRESS,POST_PRODUCT_PROGRESS,DELETE_PRODUCT_PROGRESS,PATCH_PRODUCT_PROGRESS } from "./redux-saga/admin/action/action";
+import Data from "./components/Data";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type:GET_PRODUCT_PROGRESS,
+      POST_PRODUCT_PROGRESS,
+      DELETE_PRODUCT_PROGRESS,
+      PATCH_PRODUCT_PROGRESS,});
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      redux saga
+      <Data />
     </div>
   );
 }
-
 export default App;
