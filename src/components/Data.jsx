@@ -2,7 +2,6 @@ import React, { useRef,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DELETE_PRODUCT_PROGRESS,GET_PRODUCT_PROGRESS, PATCH_PRODUCT_PROGRESS, POST_PRODUCT_PROGRESS } from "../redux-saga/admin/action/action";
 
-// data.jsx
 const Data = () => {
   const name = useRef()
   const price = useRef()
